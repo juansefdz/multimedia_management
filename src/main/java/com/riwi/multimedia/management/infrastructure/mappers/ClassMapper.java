@@ -18,7 +18,4 @@ public interface ClassMapper {
     ClassResponse toResponse(ClassEntity entity);
 
     
-    ClassEntity toEntityUpdate(ClassRequest request);
-
-    
 }

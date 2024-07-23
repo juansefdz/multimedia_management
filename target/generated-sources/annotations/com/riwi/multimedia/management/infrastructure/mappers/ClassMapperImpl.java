@@ -12,7 +12,7 @@ import org.springframework.stereotype.Component;
 
 @Generated(
     value = "org.mapstruct.ap.MappingProcessor",
-    date = "2024-07-23T10:02:48-0500",
+    date = "2024-07-23T10:36:12-0500",
     comments = "version: 1.5.5.Final, compiler: Eclipse JDT (IDE) 3.39.0.v20240620-1855, environment: Java 17.0.11 (Eclipse Adoptium)"
 )
 @Component
@@ -26,6 +26,7 @@ public class ClassMapperImpl implements ClassMapper {
 
         ClassEntity classEntity = new ClassEntity();
 
+        classEntity.setCreatedAt( request.getCreatedAt() );
         classEntity.setDescription( request.getDescription() );
         classEntity.setIdClass( request.getIdClass() );
         classEntity.setIsActive( request.getIsActive() );
@@ -56,29 +57,5 @@ public class ClassMapperImpl implements ClassMapper {
         classResponse.setNameClass( entity.getNameClass() );
 
         return classResponse;
-    }
-
-    @Override
-    public ClassEntity toEntityUpdate(ClassRequest request) {
-        if ( request == null ) {
-            return null;
-        }
-
-        ClassEntity classEntity = new ClassEntity();
-
-        classEntity.setDescription( request.getDescription() );
-        classEntity.setIdClass( request.getIdClass() );
-        classEntity.setIsActive( request.getIsActive() );
-        List<Lesson> list = request.getLessons();
-        if ( list != null ) {
-            classEntity.setLessons( new ArrayList<Lesson>( list ) );
-        }
-        classEntity.setNameClass( request.getNameClass() );
-        List<Student> list1 = request.getStudents();
-        if ( list1 != null ) {
-            classEntity.setStudents( new ArrayList<Student>( list1 ) );
-        }
-
-        return classEntity;
     }
 }
