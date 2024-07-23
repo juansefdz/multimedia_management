@@ -1,5 +1,8 @@
 package com.riwi.multimedia.management.api.dto.response;
 
+import java.time.LocalDate;
+import com.riwi.multimedia.management.domain.entities.ClassEntity;
+
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -13,9 +16,9 @@ public class StudentResponse {
     private Long id;
     private String name;
     private String email;
-    private String createdAt;
+    private LocalDate createdAt;
     private Boolean isActive;
-    private Long classId;    
+    private ClassEntity classId;    
 
 
 
