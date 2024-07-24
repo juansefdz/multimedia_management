@@ -40,8 +40,11 @@ public class StudentService implements IStudentService {
 
     @Override
     public void delete(Long id) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'delete'");
+        Student studentDisable = this.find(id);
+        if (studentDisable != null) {
+            studentDisable.setIsActive(false);
+            this.studentRepository.save(studentDisable);
+        }
     }
 
     @Override
@@ -49,6 +52,13 @@ public class StudentService implements IStudentService {
         // TODO Auto-generated method stub
         throw new UnsupportedOperationException("Unimplemented method 'update'");
     }
+
+    private Student find(Long id) {
+        return studentRepository.findById(id).orElseThrow(() -> new IllegalArgumentException("Student not found"));
+    }
+
+
+
 
     @Override
     public Optional<StudentResponse> getById(Long id) {
@@ -60,14 +70,12 @@ public class StudentService implements IStudentService {
         return studentsPage.map(studentMapper::toResponse);
     }
     public Page<StudentResponse> getAllByStatus(boolean isActive, Pageable pageable) {
-        Page<Student> studentsPage = studentRepository.findAllByisActive(isActive, pageable);
+        Page<Student> studentsPage = studentRepository.findAll(isActive, pageable);
         return studentsPage.map(studentMapper::toResponse);
     }
-
-    
-
-    private Student find(Long id) {
-        return studentRepository.findById(id).orElseThrow(() -> new IllegalArgumentException("Student not found"));
+    public Page<StudentResponse> getAllByName(String name, Pageable pageable) {
+        Page<Student> studentsPage = studentRepository.findAllByName(name, pageable);
+        return studentsPage.map(studentMapper::toResponse);
     }
 
     
