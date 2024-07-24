@@ -3,7 +3,7 @@ spring:
     name: multimedia-management
 
   datasource:
-    url: jdbc:mysql://db:3307/multimedia_management
+    url: jdbc:mysql://db:3306/multimedia_management
     username: user
     password: password
     driver-class-name: com.mysql.cj.jdbc.Driver

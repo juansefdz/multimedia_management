@@ -7,7 +7,7 @@ services:
     restart: always
     environment:
       - MYSQL_ROOT_PASSWORD=root
-      - MYSQL_DATABASE=multimedia_management
+      - MYSQL_DATABASE=multimedia_management_db
       - MYSQL_USER=user
       - MYSQL_PASSWORD=password
     ports:
