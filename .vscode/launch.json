@@ -1,0 +1,14 @@
+{
+  "configurations": [
+    {
+      "type": "java",
+      "name": "Spring Boot-MultimediaManagementApplication<multimedia-management>",
+      "request": "launch",
+      "cwd": "${workspaceFolder}",
+      "mainClass": "com.riwi.multimedia.management.MultimediaManagementApplication",
+      "projectName": "multimedia-management",
+      "args": "",
+      "envFile": "${workspaceFolder}/.env"
+    }
+  ]
+}

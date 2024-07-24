@@ -20,7 +20,7 @@ import lombok.Setter;
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-@Table(name = "studentes")
+@Table(name = "students")
 public class Student {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -29,7 +29,7 @@ public class Student {
     @Column(nullable = false, length = 255)
     private String name;
 
-    @Column(nullable = false, length = 255)
+    @Column(nullable = false, length = 255, unique = true)
     private String email;
 
     @Column(name = "created_at", nullable = false)
@@ -40,6 +40,5 @@ public class Student {
 
     @ManyToOne
     @JoinColumn(name = "fk_class_id", nullable = false)
-    private ClassEntity classId;
-    
+    private ClassEntity classEntity;
 }

@@ -43,7 +43,7 @@ public class Lesson {
 
     @ManyToOne
     @JoinColumn(name = "fk_class_id", nullable = false)
-    private ClassEntity classId;
+    private ClassEntity classEntity;
 
     @OneToMany(mappedBy = "lesson", cascade = CascadeType.ALL)
     private List<Multimedia> multimediaList;

@@ -46,5 +46,4 @@ public class Multimedia {
     @ManyToOne
     @JoinColumn(name = "fk_lesson_id", nullable = false)
     private Lesson lesson;
-    
 }

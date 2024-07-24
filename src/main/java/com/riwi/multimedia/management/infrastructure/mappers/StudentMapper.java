@@ -26,7 +26,7 @@ public interface StudentMapper {
             @Mapping(target = "id", ignore = true),
             @Mapping(target = "createdAt", ignore = true),
             @Mapping(target = "isActive", ignore = true),
-            @Mapping(target = "classId", ignore = true)
+            @Mapping(target = "classEntity", ignore = true)
     })
 
     Student toEntityUpdate(StudentRequestUpdate request);

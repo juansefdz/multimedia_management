@@ -18,8 +18,8 @@ import lombok.Setter;
 @AllArgsConstructor
 public class ClassRequest {
 
-    private Long idClass;
-    private String nameClass;
+    private Long id;
+    private String name;
     private String description;
      private LocalDate createdAt;
     private Boolean isActive;
