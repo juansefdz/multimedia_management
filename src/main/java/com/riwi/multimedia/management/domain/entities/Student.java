@@ -36,6 +36,7 @@ public class Student {
     private LocalDate createdAt;
 
     @Column(nullable = false)
+
     private Boolean isActive;
 
     @ManyToOne
