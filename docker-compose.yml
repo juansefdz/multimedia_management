@@ -1,17 +1,14 @@
 services:
-  db: # name of the service
-    image: mysql:8.0 # specify image to build container from
-    container_name: multimedia-management # name of the container
-    restart: always # restart the container if it fails
-    environment: # environment variables
-      MYSQL_ROOT_PASSWORD: root # specify root password
-      MYSQL_DATABASE: multimedia_management # specify database name
-      MYSQL_USER: root # specify user
-      MYSQL_PASSWORD: password  # specify password
-    ports:
-      - "3307:3306" # specify port mapping
-    volumes:
-      - db_data:/var/lib/mysql # specify volume to persist data
-
-volumes:
-  db_data: # name of the volume
+    db:
+        image: mysql:8.0
+        container_name: multimedia
+        restart: always
+        ports:
+            - "3307:3306"
+        environment:
+            MYSQL_ROOT_PASSWORD: root
+            MYSQL_DATABASE: multimedia_management_db
+            MYSQL_USER: user
+            MYSQL_PASSWORD: password
+        
+        
